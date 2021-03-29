@@ -1,0 +1,65 @@
+﻿
+@{ Layout = null;}
+
+
+<html>
+
+
+<head>
+    <h1> Add new plane</h1> 
+</head>
+
+<body>
+    @using (Html.BeginForm("Add", "Home", FormMethod.Post))
+    {
+        <p>
+            @Html.Label("CountryLabel", "Country")
+            @Html.TextBox("country", "UK", new { type = "text" })
+        </p>
+
+        <p>
+            @Html.Label("ManufacturerLabel", "Manufacturer")
+            @Html.TextBox("manufacturer", "Supermarine", new { type = "text" })
+        </p>
+
+        <p>
+            @Html.Label("ModelLabel", "Model")
+            @Html.TextBox("model", "Spitfire", new { type = "text" })
+        </p>
+
+        <p>
+            @Html.Label("YearLabel", "Year")
+            @Html.TextBox("year", "1938", new { type = "number" })
+        </p>
+
+        <p>
+            @Html.Label("UsageLabel", "Usage")<br />
+
+            @Html.RadioButton("usage", "Military")
+            <span>Military</span><br />
+            @Html.RadioButton("usage", "Transport")
+            <span>Transport</span><br />
+            @Html.RadioButton("usage", "Passenger")
+            <span>Passenger</span><br />
+            @Html.RadioButton("usage", "Unknown", true)
+            <span>Unknown</span><br />
+        </p>
+
+        <p>
+            @Html.Label("RetiredLabel", "Retired")
+            @Html.CheckBox("isRetired", false)
+        </p>
+        <p>
+            @Html.Label("LinkLabel", "Link")
+            @Html.TextBox("link", "https://ru.wikipedia.org/wiki/Supermarine_Spitfire", new { type = "text" })
+        </p>
+        <p>
+            @Html.Label("SubmitLabel", "Add to database")
+            <input type="submit" value="Send"/>
+        </p>
+
+
+    }
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+﻿@{ Layout = null;}
+<html>
+
+<head>
+    <h1>Airplanes </h1>
+</head>
+
+
+<body>
+    <h4>@ViewData["Title"]</h4>
+    <div class="airplanae-list">
+        <ul>
+
+            @foreach (var x in Model)
+            {
+                <li><a href="/Home/GetByPlane?Model=@x.Model">@x.Model (@x.IntroductionYear)</a></li>
+            }
+
+        </ul>
+    </div>
+</body>
+
+</html>
